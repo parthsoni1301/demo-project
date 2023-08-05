@@ -1,0 +1,79 @@
+{% extends "master.html" %}
+{% block content %}
+
+<div class='container1' style="background-image: url('shutterstock_290015294.jpg');">
+    <div class='centered-div1'>
+        <div class='member' style="background-color: rgb(64, 83, 136); color: white;">
+            <a href="#" style="color: white; text-decoration: none;">Find job</a>
+        </div>
+        <div class='member' style="background-color: rgb(64, 83, 136); color: white;">
+            <a href="#" style="color: white; text-decoration: none;">Hire</a>
+        </div>
+    </div>
+</div>
+
+<div>
+    <center><h1> The top companies that are hiring from our site!</h1><center>
+</div>
+<div><center>
+    <img src='top10.jpg' height=600px,widht=100%>
+</center>
+</div>
+<div class='member1 base' style="background-color: rgb(64, 83, 136) ;color:white">
+    <h1> 3x</h1>
+    <p>faster candidate submissions</p>
+</div>
+<div class='member1' style="background-color: rgb(64, 83, 136) ;color:white">
+    <h1> 30%</h1>
+    <p>more candidate placements</p>
+    </div>
+    <div class='member1 base2' style="background-color: rgb(64, 83, 136) ;color:white;">
+        <h1> 100%</h1>
+        <p>client satisfaction </p>
+    </div>
+<div class="member2">
+    <div class="member2_1" style="width: 100%;height: 20%;">
+            <h1 style="color:white">Get notified through our mail service </h1></div>
+<div class="member2_2">
+<img src="demo.png" height="450px" width="100%"/></div>
+</div>
+<center>
+<div class="profile-card" id="profile1">
+    <img class="profile-img" src="sample.jpg" alt="Profile 1 Image">
+    <div class="profile-name">John Doe</div>
+    <div class="profile-title">Web Developer</div>
+    <div class="profile-description">
+        Hi there! Apex Recruit platform has helped me a lot.
+    </div>
+    <a class="profile-link" href="https://example.com">See Profile</a>
+</div>
+
+<div class="profile-card" id="profile2">
+    <img class="profile-img" src="sample.jpg" alt="Profile 2 Image">
+    <div class="profile-name">Jane Smith</div>
+    <div class="profile-title">Graphic Designer</div>
+    <div class="profile-description">
+        Hi there! Apex Recruit platform has helped me a lot.        
+    </div>
+    <a class="profile-link" href="https://example.com">See Profile</a>
+</div>
+<div><h2>Reviews from our clients   </h2></div>
+
+</center>
+<script>
+    const profileCards = document.querySelectorAll('.profile-card');
+    let currentProfile = 0;
+
+    function showNextProfile() {
+        profileCards[currentProfile].style.display = 'none';
+        currentProfile = (currentProfile + 1) % profileCards.length;
+        profileCards[currentProfile].style.display = 'block';
+    }
+
+    // Show the first profile card initially
+    profileCards[currentProfile].style.display = 'block';
+
+    // Change to the next profile every 5 seconds (5000 milliseconds)
+    setInterval(showNextProfile, 5000);
+</script>
+{% endblock %}

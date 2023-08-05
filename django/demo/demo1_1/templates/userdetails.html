@@ -1,0 +1,43 @@
+{% extends "master.html" %}
+{% block content %}
+<center>
+<h1>Enter Username</h1>
+<form id="userInfoForm" action="{% url 'handle_username' %}">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required><br>
+
+    <button type="submit">Get Information</button>
+</form>
+
+
+<div id="userInfoContainer">
+    <h2>User Information</h2>
+    <p>Username: <span id="usernameDisplay"></span></p>
+    <p>Email: <span id="emailDisplay"></span></p>
+    <p>Applied in Companies: <span id="appliedCompaniesDisplay"></span></p>
+    <p>Rejected: <span id="rejectedDisplay"></span></p>
+    <p>In Process: <span id="inProcessDisplay"></span></p>
+</div>
+</center>
+
+<script>
+    document.getElementById("userInfoForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        const username = document.getElementById("username").value;
+
+        fetch(`/handle_username/?username=${username}`)
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById("usernameDisplay").innerText = data.username;
+                document.getElementById("emailDisplay").innerText = data.email;
+                document.getElementById("appliedCompaniesDisplay").innerText = data.applied_in_companies;
+                document.getElementById("rejectedDisplay").innerText = data.rejected;
+                document.getElementById("inProcessDisplay").innerText = data.in_process;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+    });
+</script>
+{% endblock %}

@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} {% endblock %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+        crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</head>
+<script>
+    // Check if the alert has been shown before
+    const alertShown = localStorage.getItem('alertShown');
+
+    if (!alertShown) {
+        // This function will be executed when the page finishes loading
+        window.onload = function() {
+            alert("This code works properly on Google Chrome.\n Working hyperlinks(Home,user details,courses,about us)");
+        };
+
+        // Set the flag in localStorage to indicate that the alert has been shown
+        localStorage.setItem('alertShown', 'true');
+    }
+</script>
+
+
+<style>
+    .container1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 500px;
+    }
+
+    .centered-div1 {
+        /* Set desired styles for the centered div */
+        padding: 20px;
+        width: 400px;
+        display: flex;
+        /* Align elements in the center horizontally */
+        justify-content: center;
+        /* Align elements in the center vertically */
+        align-items: center;
+    }
+
+    .member {
+        width: 100px;
+        justify-content: left;
+        align-items: left;
+        margin: 5px;
+        padding: 20px;
+        border-radius: 25px;
+        transition: transform 0.8s;
+        text-align: center;
+    }
+
+    .member:hover {
+        color: rgb(182, 226, 9);
+        transform: scale(1.2);
+    }
+
+    .member1 {
+        width: 292px;
+        margin: 5px;
+        padding: 20px;
+        border-radius: 25px;
+        transition: transform 0.8s;
+        text-align: center;
+        float: left;
+        background-color: rgb(171, 222, 203) !important;
+
+    }
+
+    .member1 h1 {
+        color: rgb(5, 81, 56);
+    }
+
+    .member1 p {
+        color: black !important;
+    }
+
+    .base {
+        margin-left: 310px;
+    }
+
+    .base2 {
+        margin-right: 300px;
+    }
+
+    .member1:hover {
+        color: rgb(182, 226, 9);
+        transform: scale(1.2);
+    }
+
+    .member2 {
+        width: 900px;
+        height: 600px;
+        margin-left: 310px;
+        padding: 20px;
+        border-radius: 25px;
+        transition: transform 0.8s;
+        text-align: center;
+        float: left;
+        background-color: rgb(75, 8, 61) !important;
+
+    }
+
+    .member2:hover {
+        color: rgb(182, 226, 9);
+        transform: scale(1.2);
+    }
+
+    member2_2 {
+        float: left;
+    }
+
+    .profile-card {
+        background-color: #fff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        padding: 20px;
+        width: 300px;
+        text-align: center;
+        display: none;
+        /* Hide all cards by default */
+    }
+
+    .profile-img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin: 10px auto;
+    }
+
+    .profile-name {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    .profile-title {
+        font-size: 16px;
+        color: #666;
+        margin-bottom: 10px;
+    }
+
+    .profile-description {
+        font-size: 14px;
+        color: #333;
+        margin-bottom: 15px;
+    }
+
+    .profile-link {
+        text-decoration: none;
+        color: #007BFF;
+        font-weight: bold;
+    }
+
+    .c-section {
+        background-color: #333;
+        color: #fff;
+        padding: 30px 0;
+        text-align: center;
+    }
+
+    .c-container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .c-footer {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .footer-column {
+        flex: 1;
+        max-width: 25%;
+        padding: 0 15px;
+        text-align: left;
+    }
+
+    .footer-logo {
+        width: 100px;
+        margin-bottom: 20px;
+    }
+
+    .footer-nav {
+        color: #fff;
+        text-decoration: none;
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .footer-nav:hover {
+        color: #ff8a00;
+    }
+
+    .sub-footer {
+        background-color: #222;
+        padding: 20px 0;
+        text-align: center;
+    }
+
+    .sub-footer a {
+        color: #fff;
+        text-decoration: none;
+        margin: 0 10px;
+    }
+
+    .sub-footer img {
+        width: 30px;
+        height: 30px;
+        vertical-align: middle;
+        margin-bottom: 5px;
+    }
+    
+</style>
+
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light navbar-default navbar-static-top" role="navigation">
+                <div class="container">
+                    <a class="navbar-brand page-scroll" href="/"><img src='apexrecruit.png' height="50px"></a>
+                    <button class="navbar-toggler collapsed" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mr-auto">
+                        </ul>
+                        <ul class="navbar-nav my-2 my-lg-0 justify-content-end">
+                            <li class="nav-item">
+                                <a class="nav-link page-scroll" href="{% url 'home' %}">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link page-scroll" id="navi" href="{% url 'userinformation' %}">User
+                                    details</a>
+                            </li>
+                            <li class="nav-item">
+                                <a id="navi" class="nav-link page-scroll" href="{% url 'courses' %}">Courses</a>
+                            </li>
+                            <li class="nav-item">
+                                <a id="navi" class="nav-link page-scroll" href="{% url 'aboutus' %}">About us</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    {% block content %}
+    {% endblock %}
+    <div class="c-section cds-footer dark-backgrnd mt-0">
+        <div class="c-container dark-footer w-container">
+            <div class="c-footer">
+                <div class="footer-column">
+                    <a href="#" class="footer-nav">Product demo</a>
+                    <a href="#" class="footer-nav">Virtual product tour</a>
+                    <!-- Add more links here -->
+                </div>
+                <div class="footer-column">
+                    <p class="footer-title">Features</p>
+                    <a href="#" class="footer-nav">Candidate Profiles</a>
+                    <a href="#" class="footer-nav">Notifications</a>
+                    <!-- Add more links here -->
+                </div>
+                <div class="footer-column">
+                    <p class="footer-title">Use-cases</p>
+                    <a href="#" class="footer-nav">NES Fircroft</a>
+                    <a href="#" class="footer-nav">TriStarr</a>
+                    <!-- Add more links here -->
+                </div>
+                <div class="footer-column">
+                    <p class="footer-title">Resources</p>
+                    <a href="#" class="footer-nav">Customer reviews</a>
+                    <a href="#" class="footer-nav">Blog</a>
+                    <!-- Add more links here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="sub-footer">
+        <div class="c-container">
+            <p class="cds-paragraph small center footer-light-paragraph">© 2023, Gustav Technologies, Inc. All
+                Rights Reserved.</p>
+            <a href="#" target="_blank" class="sf-link"><img
+                    src="https://global-uploads.webflow.com/605ad29901132bc543e01d9b/62e539d06e26a3360efb0056_TwitterLogo.svg"
+                    alt="Twitter Logo" class="sf-social-icon"></a>
+            <a href="#" target="_blank" class="sf-link"><img
+                    src="https://global-uploads.webflow.com/605ad29901132bc543e01d9b/62e539d0e68836d387007b5e_FacebookLogo.svg"
+                    alt="Facebook Logo" class="sf-social-icon"></a>
+            <a href="#" target="_blank" class="sf-link"><img
+                    src="https://global-uploads.webflow.com/605ad29901132bc543e01d9b/62e539d05d5e1d1303c562f8_LinkedinLogo.svg"
+                    alt="LinkedIn Logo" class="sf-social-icon"></a>
+            <a href="#" target="_blank" class="sf-link"><img
+                    src="https://global-uploads.webflow.com/605ad29901132bc543e01d9b/62e539d0f5e1731c80d0b98e_InstagramLogo.svg"
+                    alt="Instagram Logo" class="sf-social-icon"></a>
+            <a href="#" target="_blank" class="sf-link"><img
+                    src="https://global-uploads.webflow.com/605ad29901132bc543e01d9b/62f3a7e8f4e3f715c4ea2dfd_YoutubeLogo.svg"
+                    alt="YouTube Logo" class="sf-social-icon"></a>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+<!-- courses.html -->
+
+{% extends "master.html" %}
+
+{% block content %}
+<style>
+    /* Style for the table */
+    table {
+        border-collapse: collapse;
+        width: 80%;
+        margin: auto;
+    }
+
+    /* Style for the table header */
+    th {
+        background-color: #4CAF50;
+        color: white;
+        text-align: left;
+        padding: 8px;
+    }
+
+    /* Style for the table data */
+    td {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    /* Add alternating row color */
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+    /* Hover effect for rows */
+tr:hover {
+    background-color: #ddd; /* Change the background color when hovering */
+}
+
+</style>
+
+<center>
+    <h1>Courses Available   </h1>
+    <table style="margin-bottom: 30px;">
+        <thead>
+            <tr>
+                <th>Course ID</th>
+                <th>Course Name</th>
+                <th>Enroll</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for course in courses %}
+            <tr>
+                <td>{{ course.course_id }}</td>
+                <td>{{ course.course_name }}</td>
+                <td><a href="#">{{ course.enroll }}</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</center>
+{% endblock %}
